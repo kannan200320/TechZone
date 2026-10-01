@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechZone - Next-Gen Audio & Smart Wearables</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: ['selector', '[data-theme="dark"]'],
+        theme: {
+          extend: {
+            colors: {
+              espresso: '#3E2723',
+              mocha: '#5D4037',
+              taupe: '#8D6E63',
+              sand: '#D7CCC8',
+              softCream: '#FDFBF9',
+              softBorder: '#EFEBE9',
+              darkBg: '#000000',
+              darkCard: '#000000',
+              darkBorder: '#333333',
+              darkSection: '#121212'
+            },
+            fontFamily: {
+              sans: ['Poppins', 'system-ui', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="font-sans antialiased text-[#3E2723] dark:text-white bg-[#FDFBF9] dark:bg-black transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
