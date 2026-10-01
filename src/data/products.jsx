@@ -476,37 +476,34 @@ export const products = [
 export const testimonials = [
   {
     id: 1,
-    name: 'Vikramaditya Roy',
-    role: 'Music Producer & Sound Engineer',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400',
-    comment: 'TechZone has democratized acoustic perfection. The bass separation and ANC on the Nirvana Pro series rival international headphones costing three times as much. Absolutely mind-blowing.',
+    name: 'Mera',
+    role: 'Verified Buyer',
+    comment: 'Amazing sound quality with deep bass and clear vocals. The battery easily lasts all day. Highly recommended!',
     rating: 5,
     tag: 'Verified Buyer'
   },
   {
     id: 2,
-    name: 'Ananya Sharma',
-    role: 'Marathon Runner & Fitness Coach',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400',
-    comment: 'I wear the smartwatches through 20km marathon sessions in humid conditions. The heart rate accuracy, GPS stride calculations, and 7-day battery life are simply rock solid.',
+    name: 'Ananya',
+    role: 'Verified Buyer',
+    comment: 'Very comfortable to wear all day and the battery life is great. Fitness tracking is simple and accurate.',
     rating: 5,
-    tag: 'Athletic Ambassador'
+    tag: 'Verified Buyer'
   },
   {
     id: 3,
-    name: 'Rohan Mehra',
-    role: 'Esports Caster & Streamer',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
-    comment: 'Low latency makes or breaks split-second decisions in Valorant and BGMI. 38ms Beast Mode gives me zero audio delay and footsteps are super crisp. Customer support was also lightning fast!',
+    name: 'Rohan',
+    role: 'Verified Buyer',
+    comment: 'Clear sound with no delay during gaming and calls. Fast delivery and excellent customer support.',
     rating: 5,
-    tag: 'Verified Gamer'
+    tag: 'Verified Buyer'
   }
 ];
 
 export const faqs = [
   {
     question: 'How do I claim the 1-Year Replacement Warranty?',
-    answer: 'All TechZone audio and smart wearable products include a 1-year pan-India door-step replacement warranty. Simply register your product on our warranty portal or contact our WhatsApp helpline at +91 98765 43210 with your order ID. Our courier will pick up the defective unit and replace it within 48 to 72 hours.'
+    answer: 'All TechZone audio and smart wearable products include a 1-year pan-India door-step replacement warranty. Simply register your product on our warranty portal or contact our WhatsApp helpline at +91 98765 43210 with your order ID.'
   },
   {
     question: 'Are TechZone wireless earbuds compatible with iOS and Android?',

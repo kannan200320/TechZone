@@ -81,7 +81,7 @@ export default function Login({ onLoginSuccess, onNavigate, showToast, initialEm
 
   return (
     <div className="min-h-[85vh] flex items-center justify-center py-16 px-6 bg-[#FDFBF9] dark:bg-black transition-colors">
-      <div className="w-full max-w-md bg-white dark:bg-black border border-[#EFEBE9] dark:border-[#333333] rounded-[2.5rem] p-8 sm:p-10 shadow-xl space-y-6 text-left">
+      <div className="w-full max-w-md bg-white dark:bg-black border border-[#EFEBE9] dark:border-[#333333] rounded-2xl sm:rounded-[2.5rem] p-6 sm:p-10 shadow-xl space-y-6 text-left">
         <div className="text-center space-y-2">
           <div className="flex items-center justify-center gap-2 mb-2">
             <svg className="w-8 h-8 text-[#5d54a4] dark:text-[#a5b4fc] flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">

@@ -61,7 +61,7 @@ export default function Cart({
                 return (
                   <div
                     key={item.id}
-                    className="flex flex-col sm:flex-row gap-6 items-center bg-white dark:bg-black border border-[#EFEBE9] dark:border-[#333333] p-6 rounded-2xl relative shadow-sm"
+                    className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center bg-white dark:bg-black border border-[#EFEBE9] dark:border-[#333333] p-4 sm:p-6 rounded-2xl relative shadow-sm"
                   >
                     <button
                       onClick={() => onRemoveItem(item.id)}
@@ -73,7 +73,7 @@ export default function Cart({
 
                     <div
                       onClick={() => onSelectProduct(item)}
-                      className="w-32 h-32 bg-[#FDFBF9] dark:bg-[#121212] rounded-xl border border-[#EFEBE9] dark:border-[#2D2D30] p-3 flex-shrink-0 cursor-pointer flex items-center justify-center"
+                      className="w-28 h-28 sm:w-32 sm:h-32 bg-[#FDFBF9] dark:bg-[#121212] rounded-xl border border-[#EFEBE9] dark:border-[#2D2D30] p-3 flex-shrink-0 cursor-pointer flex items-center justify-center"
                     >
                       <img
                         src={item.image}
@@ -128,7 +128,7 @@ export default function Cart({
                 );
               })}
 
-              <div className="flex justify-between items-center pt-2">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-3 pt-2">
                 <button
                   onClick={() => onNavigate('products')}
                   className="text-xs font-bold text-[#8D6E63] dark:text-[#D7CCC8] hover:underline flex items-center gap-1"

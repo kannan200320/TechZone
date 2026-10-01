@@ -19,8 +19,8 @@ export default function Footer({ onNavigate }) {
                 <path d="M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10a9 9 0 0 1 18 0v9a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" />
               </svg>
               <span className="text-2xl font-bold tracking-tight">
-                <span className="text-[#a5b4fc]">Tech</span>
-                <span className="text-white">Zone</span>
+                <span className="text-white">Tech</span>
+                <span className="text-[#D7CCC8]">Zone</span>
               </span>
             </div>
 
@@ -48,20 +48,20 @@ export default function Footer({ onNavigate }) {
 
           <div className="text-left">
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-5">Shop Brands</h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-sm p-0 m-0 list-none pl-0 ml-0">
               {[
                 'boAt',
                 'Noise',
                 'Boult',
                 'Fire-Boltt'
               ].map((item, idx) => (
-                <li key={idx}>
+                <li key={idx} className="p-0 m-0 list-none pl-0 ml-0">
                   <button
                     onClick={() => {
                       onNavigate('products');
                       window.dispatchEvent(new CustomEvent('filterBrand', { detail: item }));
                     }}
-                    className="hover:text-white transition-colors text-left"
+                    className="hover:text-white transition-colors text-left p-0 m-0 bg-transparent border-0 block focus:outline-none"
                   >
                     {item}
                   </button>
@@ -72,7 +72,7 @@ export default function Footer({ onNavigate }) {
 
           <div className="text-left">
             <h4 className="text-white font-bold text-sm tracking-wider uppercase mb-5">Company</h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-sm p-0 m-0 list-none pl-0 ml-0">
               {[
                 { label: 'About Us', page: 'about' },
                 { label: 'Contact Us', page: 'contact' },
@@ -80,10 +80,10 @@ export default function Footer({ onNavigate }) {
                 { label: 'Shopping Cart', page: 'cart' },
                 { label: 'Warranty & Support', page: 'contact' }
               ].map((item, idx) => (
-                <li key={idx}>
+                <li key={idx} className="p-0 m-0 list-none pl-0 ml-0">
                   <button
                     onClick={() => onNavigate(item.page)}
-                    className="hover:text-white transition-colors text-left"
+                    className="hover:text-white transition-colors text-left p-0 m-0 bg-transparent border-0 block focus:outline-none"
                   >
                     {item.label}
                   </button>

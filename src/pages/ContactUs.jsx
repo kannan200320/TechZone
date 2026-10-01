@@ -68,7 +68,7 @@ export default function ContactUs({ showToast }) {
 
       <section className="py-16 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div className="lg:col-span-7 bg-white dark:bg-black border border-[#EFEBE9] dark:border-[#333333] rounded-[2.5rem] p-8 md:p-10 shadow-sm text-left">
+          <div className="lg:col-span-7 bg-white dark:bg-black border border-[#EFEBE9] dark:border-[#333333] rounded-2xl sm:rounded-[2.5rem] p-5 sm:p-8 md:p-10 shadow-sm text-left">
             <h3 className="text-2xl font-black text-[#3E2723] dark:text-white mb-2">Send Us a Direct Message</h3>
             <p className="text-xs text-[#5D4037] dark:text-[#A1A1AA] mb-8">
               Fill out the form below with your inquiry and we'll connect you directly with a dedicated acoustics manager.

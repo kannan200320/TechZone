@@ -155,8 +155,8 @@ export default function ProductDetails({
             )}
 
             <div className="pt-2 space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="flex items-center border border-[#EFEBE9] dark:border-[#333333] rounded-xl bg-white dark:bg-[#121212] h-11">
+              <div className="flex flex-wrap sm:flex-nowrap items-center gap-2.5 sm:gap-3">
+                <div className="flex items-center border border-[#EFEBE9] dark:border-[#333333] rounded-xl bg-white dark:bg-[#121212] h-11 flex-shrink-0">
                   <button
                     type="button"
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
@@ -164,7 +164,7 @@ export default function ProductDetails({
                   >
                     <i className="bi bi-dash"></i>
                   </button>
-                  <span className="w-10 text-center font-bold text-xs text-[#3E2723] dark:text-white">
+                  <span className="w-8 sm:w-10 text-center font-bold text-xs text-[#3E2723] dark:text-white">
                     {quantity}
                   </span>
                   <button
@@ -178,7 +178,7 @@ export default function ProductDetails({
 
                 <button
                   onClick={() => onAddToCart(product, quantity)}
-                  className="flex-1 bg-[#3E2723] hover:bg-[#5D4037] dark:bg-white dark:hover:bg-zinc-200 dark:text-black text-white h-11 rounded-xl font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-sm"
+                  className="flex-1 min-w-[150px] bg-[#3E2723] hover:bg-[#5D4037] dark:bg-white dark:hover:bg-zinc-200 dark:text-black text-white h-11 rounded-xl font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-sm px-3"
                 >
                   <i className="bi bi-bag-plus"></i>
                   <span>Add to Cart • ₹{totalPrice.toLocaleString('en-IN')}</span>
@@ -186,7 +186,7 @@ export default function ProductDetails({
 
                 <button
                   onClick={() => onToggleWishlist(product)}
-                  className={`h-11 w-11 rounded-xl border flex items-center justify-center transition-colors ${
+                  className={`h-11 w-11 rounded-xl border flex items-center justify-center flex-shrink-0 transition-colors ${
                     isWishlisted
                       ? 'border-[#8D6E63] text-[#8D6E63] dark:border-white dark:text-white'
                       : 'border-[#EFEBE9] dark:border-[#333333] text-[#5D4037] dark:text-[#A1A1AA] hover:border-[#8D6E63]'
@@ -197,7 +197,7 @@ export default function ProductDetails({
                 </button>
               </div>
 
-              <div className="flex items-center gap-6 pt-3 text-[11px] text-[#5D4037]/80 dark:text-[#A1A1AA]">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-3 text-[11px] text-[#5D4037]/80 dark:text-[#A1A1AA]">
                 <span className="flex items-center gap-1.5">
                   <i className="bi bi-truck"></i> Free Shipping
                 </span>

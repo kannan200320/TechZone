@@ -14,10 +14,19 @@ export default function CartDrawer({
 
   useEffect(() => {
     if (isOpen) {
-      const originalOverflow = document.body.style.overflow;
+      const originalHtmlOverflow = document.documentElement.style.overflow;
+      const originalBodyOverflow = document.body.style.overflow;
+
+      document.documentElement.classList.add('no-scroll');
+      document.body.classList.add('no-scroll');
+      document.documentElement.style.overflow = 'hidden';
       document.body.style.overflow = 'hidden';
+
       return () => {
-        document.body.style.overflow = originalOverflow;
+        document.documentElement.classList.remove('no-scroll');
+        document.body.classList.remove('no-scroll');
+        document.documentElement.style.overflow = originalHtmlOverflow;
+        document.body.style.overflow = originalBodyOverflow;
       };
     }
   }, [isOpen]);
@@ -49,15 +58,20 @@ export default function CartDrawer({
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-hidden">
+    <div className="fixed inset-0 z-50 overflow-hidden overscroll-contain" role="dialog" aria-modal="true">
       <div 
         className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
         onClick={onClose}
+        onTouchMove={(e) => e.preventDefault()}
+        onWheel={(e) => e.preventDefault()}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-white dark:bg-black border-l border-transparent dark:border-[#333333] shadow-2xl flex flex-col justify-between">
-          <div className="p-6 border-b border-[#EFEBE9] dark:border-[#333333] flex items-center justify-between">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
+        <div className="w-full sm:w-screen max-w-md bg-white dark:bg-black border-l border-transparent dark:border-[#333333] shadow-2xl flex flex-col justify-between overscroll-contain">
+          <div 
+            className="p-6 border-b border-[#EFEBE9] dark:border-[#333333] flex items-center justify-between"
+            onTouchMove={(e) => e.preventDefault()}
+          >
             <div className="flex items-center gap-2">
               <i className="bi bi-bag-check-fill text-[#3E2723] dark:text-[#D7CCC8] text-xl"></i>
               <h3 className="font-bold text-[#3E2723] dark:text-white text-base">Your Cart</h3>
@@ -90,7 +104,7 @@ export default function CartDrawer({
             </div>
           </div>
 
-          <div className="p-6 overflow-y-auto flex-1 space-y-4">
+          <div className="p-6 overflow-y-auto flex-1 space-y-4 overscroll-contain touch-pan-y">
             {cart.length === 0 ? (
               <div className="text-center py-16 space-y-4">
                 <div className="w-16 h-16 rounded-full bg-[#EFEBE9] dark:bg-[#121212] text-[#8D6E63] mx-auto flex items-center justify-center text-2xl">
@@ -176,7 +190,10 @@ export default function CartDrawer({
           </div>
 
           {cart.length > 0 && (
-            <div className="p-6 border-t border-[#EFEBE9] dark:border-[#333333] bg-[#FDFBF9] dark:bg-black space-y-4">
+            <div 
+              className="p-6 border-t border-[#EFEBE9] dark:border-[#333333] bg-[#FDFBF9] dark:bg-black space-y-4"
+              onTouchMove={(e) => e.preventDefault()}
+            >
               <div className="space-y-1.5 text-xs text-[#5D4037] dark:text-[#A1A1AA] pt-2 border-t border-[#EFEBE9] dark:border-[#333333]">
                 <div className="flex justify-between">
                   <span>Subtotal</span>

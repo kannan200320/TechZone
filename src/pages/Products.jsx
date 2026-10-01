@@ -16,19 +16,28 @@ export default function Products({
   const [maxPrice, setMaxPrice] = useState(8000);
   const [sortBy, setSortBy] = useState('featured');
   const [isLoading, setIsLoading] = useState(false);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
 
   useEffect(() => {
-    if (selectedBrandFromNav && selectedBrandFromNav !== 'All') {
-      const target = selectedBrandFromNav === 'Fire-Bolt' ? 'Fire-Boltt' : selectedBrandFromNav;
-      setSelectedBrands([target]);
+    if (selectedBrandFromNav) {
+      if (selectedBrandFromNav === 'All') {
+        setSelectedBrands([]);
+      } else {
+        const target = selectedBrandFromNav === 'Fire-Bolt' ? 'Fire-Boltt' : selectedBrandFromNav;
+        setSelectedBrands([target]);
+      }
     }
   }, [selectedBrandFromNav]);
 
   useEffect(() => {
     const handleBrandEvent = (e) => {
-      if (e.detail) {
-        const target = e.detail === 'Fire-Bolt' ? 'Fire-Boltt' : e.detail;
-        setSelectedBrands([target]);
+      if (e.detail !== undefined) {
+        if (e.detail === 'All') {
+          setSelectedBrands([]);
+        } else {
+          const target = e.detail === 'Fire-Bolt' ? 'Fire-Boltt' : e.detail;
+          setSelectedBrands([target]);
+        }
         setIsLoading(true);
         setTimeout(() => setIsLoading(false), 250);
       }
@@ -103,11 +112,11 @@ export default function Products({
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-10 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
-            <aside className="space-y-6 lg:sticky lg:top-24 text-left">
-              {(searchTerm || selectedBrands.length > 0 || maxPrice < 150) && (
+            <aside className={`${showMobileFilters ? 'block' : 'hidden'} lg:block space-y-6 lg:sticky lg:top-24 text-left`}>
+              {(searchTerm || selectedBrands.length > 0 || maxPrice < 8000) && (
                 <button
                   onClick={resetFilters}
                   className="w-full py-2.5 px-4 rounded-2xl bg-[#EFEBE9] dark:bg-[#1E1E1E] border border-[#8D6E63]/30 dark:border-[#2D2D30] text-[#3E2723] dark:text-[#D7CCC8] text-xs font-bold flex items-center justify-center gap-2 hover:bg-[#8D6E63] hover:text-white transition-colors"
@@ -209,15 +218,28 @@ export default function Products({
             </aside>
 
             <main className="lg:col-span-3 space-y-6">
-              <div className="flex flex-col sm:flex-row justify-between items-center bg-white dark:bg-black border border-[#EFEBE9] dark:border-[#333333] p-4 rounded-2xl gap-4 shadow-sm">
-                <div className="text-xs text-[#5D4037] dark:text-[#A1A1AA] font-bold uppercase tracking-wider">
-                  <span className="text-[#3E2723] dark:text-white text-sm font-black mr-1">
-                    {filteredProducts.length}
-                  </span>
-                  products found
+              <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center bg-white dark:bg-black border border-[#EFEBE9] dark:border-[#333333] p-4 rounded-2xl gap-3 sm:gap-4 shadow-sm">
+                <div className="flex items-center justify-between sm:justify-start gap-3">
+                  <div className="text-xs text-[#5D4037] dark:text-[#A1A1AA] font-bold uppercase tracking-wider">
+                    <span className="text-[#3E2723] dark:text-white text-sm font-black mr-1">
+                      {filteredProducts.length}
+                    </span>
+                    products found
+                  </div>
+
+                  <button
+                    onClick={() => setShowMobileFilters(!showMobileFilters)}
+                    className="lg:hidden flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#EFEBE9] dark:bg-[#1E1E1E] text-[#3E2723] dark:text-white text-xs font-bold hover:bg-[#8D6E63] hover:text-white transition-colors"
+                  >
+                    <i className="bi bi-sliders"></i>
+                    <span>{showMobileFilters ? 'Hide Filters' : 'Filters'}</span>
+                    {(selectedBrands.length > 0 || searchTerm || maxPrice < 8000) && (
+                      <span className="w-2 h-2 rounded-full bg-[#8D6E63] dark:bg-amber-400"></span>
+                    )}
+                  </button>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center justify-between sm:justify-end gap-3">
                   <span className="text-xs font-bold text-[#8D6E63] dark:text-[#A1A1AA] uppercase tracking-wider">Sort by:</span>
                   <select
                     value={sortBy}

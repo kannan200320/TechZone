@@ -28,6 +28,22 @@ html, body {
   color: var(--text-color);
   transition: background-color 0.4s ease, color 0.4s ease;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+}
+
+.overscroll-contain {
+  overscroll-behavior: contain !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.touch-pan-y {
+  touch-action: pan-y !important;
 }
 
 #root {
@@ -111,6 +127,30 @@ html, body {
   border-top-color: #333333 !important;
 }
 
+footer ul {
+  padding: 0 !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+  margin-left: 0 !important;
+  list-style: none !important;
+}
+
+footer li {
+  padding: 0 !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+  margin-left: 0 !important;
+  list-style: none !important;
+}
+
+footer button {
+  padding: 0 !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+  margin-left: 0 !important;
+  text-align: left !important;
+}
+
 [data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]),
 [data-theme="dark"] select,
 [data-theme="dark"] textarea {
@@ -140,12 +180,12 @@ html, body {
 }
 
 .logo-tech {
-  color: #5d54a4 !important;
+  color: #000000 !important;
 }
 
 [data-theme="dark"] .logo-tech,
 .dark .logo-tech {
-  color: #a5b4fc !important;
+  color: #ffffff !important;
 }
 
 .logo-zone {

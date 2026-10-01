@@ -48,26 +48,26 @@ export default function Home({
               </button>
             </div>
 
-            <div className="pt-4 flex items-center gap-8 border-t border-[#EFEBE9] dark:border-[#2D2D30]">
+            <div className="pt-4 flex flex-wrap items-center gap-4 sm:gap-8 border-t border-[#EFEBE9] dark:border-[#2D2D30]">
               <div>
-                <p className="text-2xl font-bold text-[#3E2723] dark:text-white">5M+</p>
-                <p className="text-[11px] font-semibold text-[#8D6E63] dark:text-[#A1A1AA] uppercase tracking-wider">Happy Users</p>
+                <p className="text-xl sm:text-2xl font-bold text-[#3E2723] dark:text-white">5M+</p>
+                <p className="text-[10px] sm:text-[11px] font-semibold text-[#8D6E63] dark:text-[#A1A1AA] uppercase tracking-wider">Happy Users</p>
               </div>
               <div className="w-px h-8 bg-[#EFEBE9] dark:bg-[#2D2D30]"></div>
               <div>
-                <p className="text-2xl font-bold text-[#3E2723] dark:text-white">40ms</p>
-                <p className="text-[11px] font-semibold text-[#8D6E63] dark:text-[#A1A1AA] uppercase tracking-wider">Beast Latency</p>
+                <p className="text-xl sm:text-2xl font-bold text-[#3E2723] dark:text-white">40ms</p>
+                <p className="text-[10px] sm:text-[11px] font-semibold text-[#8D6E63] dark:text-[#A1A1AA] uppercase tracking-wider">Beast Latency</p>
               </div>
               <div className="w-px h-8 bg-[#EFEBE9] dark:bg-[#2D2D30]"></div>
               <div>
-                <p className="text-2xl font-bold text-[#3E2723] dark:text-white">4.8★</p>
-                <p className="text-[11px] font-semibold text-[#8D6E63] dark:text-[#A1A1AA] uppercase tracking-wider">Average Rating</p>
+                <p className="text-xl sm:text-2xl font-bold text-[#3E2723] dark:text-white">4.8★</p>
+                <p className="text-[10px] sm:text-[11px] font-semibold text-[#8D6E63] dark:text-[#A1A1AA] uppercase tracking-wider">Average Rating</p>
               </div>
             </div>
           </div>
 
           <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(62,39,35,0.12)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] border-8 border-white dark:border-[#1E1E1E] aspect-[4/3] sm:aspect-square bg-slate-950 flex items-center justify-center relative group">
+            <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(62,39,35,0.12)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)] border-4 sm:border-8 border-white dark:border-[#1E1E1E] aspect-[4/3] sm:aspect-square bg-slate-950 flex items-center justify-center relative group">
               <img
                 src="https://i.pinimg.com/1200x/84/b9/87/84b9876ac1be1371b3cc4fb5d4561be4.jpg"
                 alt="TechZone Premium Audio"
@@ -245,48 +245,41 @@ export default function Home({
       </section>
 
       <section className="py-20 bg-[#FDFBF9] dark:bg-black transition-colors border-t border-[#EFEBE9] dark:border-[#333333]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-[#8D6E63] dark:text-[#D7CCC8] font-semibold tracking-[0.2em] text-xs uppercase mb-3">
-              Customer Feedback
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
+            <h2 className="text-[#8D6E63] dark:text-[#D7CCC8] font-semibold tracking-wider text-xs uppercase mb-2">
+              Reviews
             </h2>
-            <h3 className="text-3xl sm:text-4xl font-semibold text-[#3E2723] dark:text-white">
-              Loved by Audiophiles & Athletes
+            <h3 className="text-2xl sm:text-4xl font-bold text-[#3E2723] dark:text-white">
+              What Our Customers Say
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.slice(0, 3).map((item) => (
               <div
                 key={item.id}
-                className="bg-white dark:bg-[#121212] p-8 rounded-3xl border border-[#EFEBE9] dark:border-[#333333] shadow-sm flex flex-col justify-between text-left hover:border-[#8D6E63] transition-all duration-300"
+                className="bg-white dark:bg-[#121212] p-6 sm:p-7 rounded-2xl sm:rounded-3xl border border-[#EFEBE9] dark:border-[#333333] shadow-sm flex flex-col justify-between text-left hover:border-[#8D6E63] transition-all duration-300"
               >
                 <div>
-                  <div className="flex items-center gap-1 text-amber-500 text-sm mb-4">
+                  <div className="flex items-center gap-1 text-amber-500 text-sm mb-3">
                     {[...Array(item.rating)].map((_, i) => (
-                      <i key={i} className="bi bi-star-fill"></i>
+                      <i key={i} className="bi bi-star-fill text-xs sm:text-sm"></i>
                     ))}
                   </div>
 
-                  <p className="text-sm text-[#5D4037] dark:text-[#A1A1AA] leading-relaxed italic mb-6">
+                  <p className="text-sm text-[#5D4037] dark:text-[#A1A1AA] leading-relaxed mb-6">
                     "{item.comment}"
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3 pt-4 border-t border-[#EFEBE9] dark:border-[#333333]">
-                  <img
-                    src={item.avatar}
-                    alt={item.name}
-                    className="w-11 h-11 rounded-full object-cover border border-[#8D6E63]/30"
-                  />
-                  <div>
-                    <h5 className="font-bold text-sm text-[#3E2723] dark:text-white">
-                      {item.name}
-                    </h5>
-                    <p className="text-[11px] text-[#8D6E63] dark:text-[#D7CCC8]">
-                      {item.role}
-                    </p>
-                  </div>
+                <div className="pt-4 border-t border-[#EFEBE9] dark:border-[#333333]">
+                  <h5 className="font-bold text-sm text-[#3E2723] dark:text-white">
+                    {item.name}
+                  </h5>
+                  <p className="text-[11px] text-[#8D6E63] dark:text-[#D7CCC8] mt-0.5">
+                    {item.role}
+                  </p>
                 </div>
               </div>
             ))}
